@@ -5,6 +5,7 @@ import { CinematicHeroV2 } from '../components/ui/CinematicHeroV2';
 import { GlowCard } from '../components/ui/GlowCard';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { SEO } from '../components/common/SEO';
 
 
 export const Home = () => {
@@ -12,38 +13,39 @@ export const Home = () => {
 
   return (
     <main className="bg-[#0a0a0a] min-h-screen selection:bg-primary selection:text-black antialiased">
+      <SEO titleKey="seo.home_title" descriptionKey="seo.home_desc" />
       <CinematicHeroV2 />
 
       {/* Established Heritage Section */}
-      <section className="py-32 px-6 bg-[#0d0d0d] border-t border-white/5 relative overflow-hidden">
+      <section className="py-20 md:py-32 px-6 bg-[#0d0d0d] border-t border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -mr-48 -mt-48" />
         <div className="max-w-container-max mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-6 md:space-y-8"
             >
               <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary/5 border border-primary/20 rounded-sm">
                 <Landmark size={16} className="text-primary" />
                 <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">{t('about.managed_by.main')} {t('about.managed_by.accent')}</span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight uppercase font-serif">
+              <h2 className="text-3xl md:text-6xl font-bold tracking-tight text-white leading-tight uppercase font-serif">
                 {t('home.legacy_title.main')} <br />
                 <span className="text-primary italic">{t('home.legacy_title.accent')}</span>
               </h2>
-              <p className="text-white/40 text-lg leading-relaxed max-w-xl font-light">
+              <p className="text-white/40 text-base md:text-lg leading-relaxed max-w-xl font-light">
                 {t('home.legacy_desc')}
               </p>
-              <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/5">
+              <div className="grid grid-cols-2 gap-6 md:gap-8 pt-8 border-t border-white/5">
                 <div>
-                  <div className="text-3xl font-bold text-white mb-2">2014</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">2014</div>
                   <div className="text-[10px] text-white/40 tracking-widest uppercase font-bold">{t('home.stats.experience')}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white mb-2">500+</div>
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-2">500+</div>
                   <div className="text-[10px] text-white/40 tracking-widest uppercase font-bold">{t('home.stats.clients')}</div>
                 </div>
               </div>
@@ -54,7 +56,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative aspect-square rounded-2xl overflow-hidden border border-white/10"
+              className="relative aspect-[4/3] md:aspect-square rounded-2xl overflow-hidden border border-white/10"
             >
               <img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
@@ -68,9 +70,9 @@ export const Home = () => {
       </section>
 
       {/* Featured Services Section */}
-      <section className="py-32 px-6 bg-[#0a0a0a]">
+      <section className="py-20 md:py-32 px-6 bg-[#0a0a0a]">
         <div className="max-w-container-max mx-auto">
-          <div className="text-center mb-24 space-y-4">
+          <div className="text-center mb-16 md:mb-24 space-y-4">
             <motion.span 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -81,13 +83,13 @@ export const Home = () => {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold text-white tracking-tight uppercase"
+              className="text-3xl md:text-5xl font-bold text-white tracking-tight uppercase"
             >
               {t('services.subtitle')}
             </motion.h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               { title: t('services.items.tax_compliance'), desc: t('services.items.tax_compliance_desc'), icon: Shield },
               { title: t('services.items.accounting'), desc: t('services.items.accounting_desc'), icon: Landmark },
@@ -106,12 +108,12 @@ export const Home = () => {
               >
                 <GlowCard 
                   customSize 
-                  className="h-full bg-white/[0.02] border-white/5 hover:bg-white/[0.04] transition-all group p-10 flex flex-col items-start"
+                  className="h-full bg-white/[0.02] border-white/5 hover:bg-white/[0.04] transition-all group p-8 md:p-10 flex flex-col items-start"
                   glowColor="gold"
                 >
-                  <service.icon className="text-primary mb-6 group-hover:scale-110 transition-transform" size={32} />
-                  <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-white/40 text-sm leading-relaxed flex-grow">{service.desc}</p>
+                  <service.icon className="text-primary mb-6 group-hover:scale-110 transition-transform" size={28} />
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">{service.title}</h3>
+                  <p className="text-white/40 text-xs md:text-sm leading-relaxed flex-grow">{service.desc}</p>
                 </GlowCard>
               </motion.div>
             ))}
@@ -120,23 +122,23 @@ export const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 px-6 relative overflow-hidden">
+      <section className="py-24 md:py-40 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#bda55d]/[0.02] pointer-events-none" />
         <div className="max-w-container-max mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-10"
+            className="space-y-8 md:space-y-10"
           >
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-tight font-serif uppercase">
+            <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-white max-w-4xl mx-auto leading-tight font-serif uppercase">
               {t('services.cta_title')}
             </h2>
-            <p className="text-white/40 text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-white/40 text-base md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
               {t('hero.description')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center font-bold tracking-widest">
-              <Link to="/contact" className="bg-primary text-black px-12 py-5 font-bold hover:bg-primary transition-all text-xs tracking-widest uppercase rounded-sm flex items-center gap-4 group">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center font-bold tracking-widest">
+              <Link to="/contact" className="w-full sm:w-auto bg-primary text-black px-10 md:px-12 py-4 md:py-5 font-bold hover:bg-primary transition-all text-[10px] md:text-xs tracking-widest uppercase rounded-sm flex items-center justify-center gap-4 group">
                 {t('services.cta_button')}
                 {t('common.dir') === 'rtl' ? (
                   <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
@@ -144,7 +146,7 @@ export const Home = () => {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 )}
               </Link>
-              <Link to="/services" className="px-12 py-5 border border-white/20 text-white font-bold hover:bg-white/5 transition-all text-xs tracking-widest uppercase rounded-sm">
+              <Link to="/services" className="w-full sm:w-auto px-10 md:px-12 py-4 md:py-5 border border-white/20 text-white font-bold hover:bg-white/5 transition-all text-[10px] md:text-xs tracking-widest uppercase rounded-sm text-center">
                 {t('hero.cta_services')}
               </Link>
             </div>

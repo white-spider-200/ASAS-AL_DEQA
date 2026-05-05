@@ -46,7 +46,12 @@ export const Navbar = () => {
       <div className="max-w-container-max mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tighter text-primary uppercase">Asas Al-Deqa</span>
+          <img 
+            src="/input_file_0.png" 
+            alt="Asas Al-Deqa Logo" 
+            className="h-12 w-auto object-contain"
+            referrerPolicy="no-referrer"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -98,32 +103,60 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-[73px] bg-background z-40 md:hidden flex flex-col p-8 gap-8"
+            initial={{ opacity: 0, x: i18n.language === 'ar' ? '-100%' : '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: i18n.language === 'ar' ? '-100%' : '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-background z-[60] flex flex-col p-8 pt-24 gap-6"
           >
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  'text-2xl font-noto-serif font-medium border-b border-outline/10 pb-4 flex justify-between items-center',
-                  location.pathname === link.path ? 'text-primary' : 'text-on-surface'
-                )}
-              >
-                {link.label}
-                <ChevronRight className={cn(i18n.language === 'ar' ? 'rotate-180' : '', "text-primary")} />
-              </Link>
-            ))}
-            <Link
-              to="/contact"
+            <button
+              className="absolute top-6 right-6 p-2 text-on-surface"
               onClick={() => setIsOpen(false)}
-              className="mt-4 bg-primary text-on-primary text-center py-4 text-lg font-bold"
             >
-              {t('services.cta_button')}
-            </Link>
+              <X size={32} />
+            </button>
+
+            <div className="flex flex-col gap-2">
+              <span className="text-[10px] font-bold tracking-[0.5em] text-primary uppercase mb-4">Navigation</span>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    'text-4xl font-noto-serif font-bold py-4 flex justify-between items-center group',
+                    location.pathname === link.path ? 'text-primary' : 'text-on-surface/40 hover:text-on-surface'
+                  )}
+                >
+                  {link.label}
+                  <ChevronRight className={cn(i18n.language === 'ar' ? 'rotate-180' : '', "text-primary opacity-0 group-hover:opacity-100 transition-opacity")} />
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-auto flex flex-col gap-6">
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="bg-primary text-black text-center py-5 text-sm font-bold tracking-[0.2em] uppercase rounded-sm"
+              >
+                {t('services.cta_button')}
+              </Link>
+              
+              <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                 <span className="text-[10px] font-bold tracking-widest text-white/20 uppercase">Asas Al-Deqa Heritage</span>
+                 <button 
+                  onClick={() => {
+                    toggleLanguage();
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center gap-2 text-[10px] font-bold tracking-widest text-primary uppercase"
+                >
+                  <Languages size={16} />
+                  {i18n.language === 'en' ? 'Arabic Version' : 'English Version'}
+                </button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

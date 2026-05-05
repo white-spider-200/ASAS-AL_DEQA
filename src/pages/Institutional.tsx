@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Building2, Users, Target, Shield } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const Institutional = () => {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white pt-24" dir="rtl">
+    <div className="bg-[#0a0a0a] min-h-screen text-white pt-24">
+      <SEO titleKey="seo.institutional_title" descriptionKey="seo.institutional_desc" />
       <section className="py-24 px-6 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
         <div className="max-w-container-max mx-auto text-center space-y-8">

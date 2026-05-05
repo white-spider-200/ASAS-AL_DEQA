@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Lightbulb, Newspaper, BarChart2, Globe } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const Insights = () => {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white pt-24" dir="rtl">
+    <div className="bg-[#0a0a0a] min-h-screen text-white pt-24">
+      <SEO titleKey="seo.insights_title" descriptionKey="seo.insights_desc" />
       <section className="py-24 px-6 relative overflow-hidden text-center">
         <motion.span 
           initial={{ opacity: 0 }}

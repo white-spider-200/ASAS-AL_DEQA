@@ -245,18 +245,18 @@ export function CinematicHeroV2({
       {/* BACKGROUND LAYER: Hero Texts */}
       <div className="hero-text-wrapper absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-40">
         <img 
-          src="https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=2000&auto=format&fit=crop" 
-          alt="Riyadh Skyline" 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+          alt="Modern Architecture" 
           className="w-full h-full object-cover grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-[#0d0d0d]/80" />
       </div>
 
       <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 will-change-transform transform-style-3d">
-        <h1 className="text-track gsap-reveal text-3d-matte text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tight mb-2 uppercase py-4 leading-[1.1] font-serif">
+        <h1 className="text-track gsap-reveal text-3d-matte text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tight mb-2 uppercase py-4 leading-[1.1] font-serif">
           {t('hero.title.main')}
         </h1>
-        <h1 className="text-days gsap-reveal text-gold-matte text-5xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter uppercase py-4 leading-[1.1] font-serif italic">
+        <h1 className="text-days gsap-reveal text-gold-matte text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter uppercase py-4 leading-[1.1] font-serif italic">
           {t('hero.title.accent')}
         </h1>
       </div>
@@ -264,15 +264,15 @@ export function CinematicHeroV2({
       {/* BACKGROUND LAYER 2: CTA Buttons */}
       <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 gsap-reveal pointer-events-auto will-change-transform">
         <motion.h2 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-gold-matte uppercase font-serif"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-gold-matte uppercase font-serif"
         >
           {isRtl ? 'أساس الدقة' : 'Asas Al-Deqa'}
         </motion.h2>
-        <p className="text-white/40 text-lg md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed">
+        <p className="text-white/40 text-base md:text-lg lg:text-xl mb-8 md:mb-12 max-w-xl mx-auto font-light leading-relaxed">
           {t('about.subtitle')}
         </p>
-        <div className="flex flex-col sm:flex-row gap-6">
-          <Link to="/contact" className="btn-modern-gold flex items-center justify-center gap-3 px-12 py-5 rounded-sm group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 uppercase text-xs tracking-widest font-bold">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <Link to="/contact" className="btn-modern-gold flex items-center justify-center gap-3 px-8 sm:px-12 py-4 sm:py-5 rounded-sm group focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 uppercase text-[10px] sm:text-xs tracking-widest font-bold">
             {t('services.cta_button')}
             {isRtl ? (
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -280,7 +280,7 @@ export function CinematicHeroV2({
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             )}
           </Link>
-          <Link to="/services" className="px-12 py-5 border border-white/20 text-white font-bold hover:bg-white/5 transition-all rounded-sm uppercase text-xs tracking-widest">
+          <Link to="/services" className="px-8 sm:px-12 py-4 sm:py-5 border border-white/20 text-white font-bold hover:bg-white/5 transition-all rounded-sm uppercase text-[10px] sm:text-xs tracking-widest text-center">
             {t('hero.cta_services')}
           </Link>
         </div>
@@ -290,53 +290,61 @@ export function CinematicHeroV2({
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none" style={{ perspective: "1500px" }}>
         <div
           ref={mainCardRef}
-          className="main-card premium-depth-card relative overflow-hidden gsap-reveal flex items-center justify-center pointer-events-auto w-[92vw] lg:w-[90vw] h-[92vh] lg:h-[80vh] rounded-[32px] lg:rounded-[12px]"
+          className="main-card premium-depth-card relative overflow-hidden gsap-reveal flex items-center justify-center pointer-events-auto w-[94vw] lg:w-[90vw] h-[94vh] lg:h-[80vh] rounded-[24px] lg:rounded-[12px]"
         >
           <div className="card-sheen" aria-hidden="true" />
 
           {/* Corrected Grid Layout to match image */}
-          <div className="relative w-full h-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 z-10 py-6 lg:py-0">
+          <div className="relative w-full h-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 z-10 py-10 lg:py-0">
             
             {/* LEFT CONTENT: Text Content */}
-            <div className="card-left-content gsap-reveal flex-1 flex flex-col items-start z-20 w-full">
-              {/* Badge: 2014 Established */}
-              <div className="mb-10 px-4 py-2 border border-primary/30 rounded-sm bg-primary/5 inline-flex items-center gap-2">
-                <Landmark size={14} className="text-primary" />
-                <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
-                  {t('home.stats.experience')}
-                </span>
+            <div className="card-left-content gsap-reveal flex-1 flex flex-col items-center lg:items-start text-center lg:text-start z-20 w-full">
+              <div className="mb-6 lg:mb-10 flex items-center gap-6">
+                <img 
+                  src="/input_file_0.png" 
+                  alt="Asas Al-Deqa Logo" 
+                  className="h-12 lg:h-16 w-auto object-contain brightness-110 drop-shadow-2xl"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="h-12 w-px bg-primary/20 hidden sm:block" />
+                <div className="px-4 py-2 border border-primary/30 rounded-sm bg-primary/5 inline-flex items-center gap-2">
+                  <Landmark size={14} className="text-primary" />
+                  <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">
+                    {t('home.stats.experience')}
+                  </span>
+                </div>
               </div>
 
               <div className="mb-4">
-                 <span className="text-primary text-xs font-bold tracking-[0.5em] uppercase">ASAS AL-DEQA</span>
+                 <span className="text-primary text-[10px] lg:text-xs font-bold tracking-[0.5em] uppercase">ASAS AL-DEQA</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-white leading-[1.1] tracking-tight uppercase font-serif">
+              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 lg:mb-6 text-white leading-[1.1] tracking-tight uppercase font-serif">
                 {t('hero.title.main')} <br />
                 <span className="text-white/60 font-medium italic">{t('hero.title.accent')}</span>
               </h2>
 
-              <h3 className="text-primary/90 text-2xl lg:text-3xl font-bold mb-8 tracking-tight uppercase">
+              <h3 className="text-primary/90 text-lg md:text-2xl lg:text-3xl font-bold mb-6 lg:mb-8 tracking-tight uppercase">
                 {t('hero.subtitle')}
               </h3>
 
-              <p className="text-white/40 text-sm md:text-base lg:text-lg font-normal leading-relaxed max-w-xl mb-12">
+              <p className="text-white/40 text-xs md:text-base lg:text-lg font-normal leading-relaxed max-w-xl mb-8 lg:mb-12">
                 {t('hero.description')}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                <Link to="/contact" className="bg-primary text-black px-10 py-4 font-bold flex items-center gap-4 group hover:bg-primary transition-colors text-[10px] tracking-[0.2em] uppercase">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 lg:mb-0">
+                <Link to="/contact" className="bg-primary text-black px-8 lg:px-10 py-3 lg:py-4 font-bold flex items-center justify-center gap-4 group hover:bg-primary transition-colors text-[10px] tracking-[0.2em] uppercase rounded-sm">
                   {t('services.cta_button')}
                   <ChevronRight size={16} className={cn(isRtl ? "rotate-180 group-hover:-translate-x-1" : "group-hover:translate-x-1", "transition-transform")} />
                 </Link>
-                <Link to="/services" className="border border-white/30 text-white px-10 py-4 font-bold hover:bg-white/5 transition-colors text-[10px] tracking-[0.2em] uppercase">
+                <Link to="/services" className="border border-white/30 text-white px-8 lg:px-10 py-3 lg:py-4 font-bold hover:bg-white/5 transition-colors text-[10px] tracking-[0.2em] uppercase rounded-sm text-center">
                   {t('hero.cta_services')}
                 </Link>
               </div>
             </div>
 
             {/* RIGHT CONTENT: Dashboard Mockup */}
-            <div className="card-right-mockup gsap-reveal flex-1 w-full relative" style={{ perspective: "1000px" }}>
+            <div className="card-right-mockup gsap-reveal flex-1 w-full relative hidden sm:block" style={{ perspective: "1000px" }}>
               <div 
                 ref={mockupRef}
                 className="relative w-full aspect-[4/3] max-w-2xl mx-auto rounded-xl bg-[#141414] border border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,1)] overflow-hidden flex flex-col will-change-transform transform-style-3d"

@@ -14,6 +14,22 @@ const resources = {
         wealth: 'Wealth',
         insights: 'Insights'
       },
+      seo: {
+        home_title: 'Asas Al-Deqa | Tax & Accounting Consultancy Jordan',
+        home_desc: 'Professional tax compliance, accounting services, and business consulting in Jordan. Precision in detail, excellence in action since 2014.',
+        about_title: 'About Us | Asas Al-Deqa',
+        about_desc: 'Learn about Asas Al-Deqa\'s legacy of professional integrity and commitment to excellence in tax and accounting consultancy services.',
+        services_title: 'Our Services | Professional Business Solutions',
+        services_desc: 'Comprehensive tax compliance, accounting, and ERP solutions tailored for SMEs and growing businesses in Jordan.',
+        contact_title: 'Contact Us | Get in Touch',
+        contact_desc: 'Contact Asas Al-Deqa for professional tax and accounting advisory. Start your formal engagement dossier today.',
+        wealth_title: 'Wealth Management | Strategic Financial Advisory',
+        wealth_desc: 'Bespoke wealth preservation blueprints and strategic financial architecture for high-net-worth individuals.',
+        institutional_title: 'Institutional Services | Corporate Advisory',
+        institutional_desc: 'Complex structural advisory and institutional financial solutions for large-scale operations.',
+        insights_title: 'Insights & Perspectives | Financial Intelligence',
+        insights_desc: 'Deep dives into tax regulations, accounting trends, and strategic business intelligence from our executive team.'
+      },
       hero: {
         title: {
           main: 'Precision in Detail,',
@@ -138,6 +154,22 @@ const resources = {
         institutional: 'مؤسسي',
         wealth: 'ثروات',
         insights: 'رؤى'
+      },
+      seo: {
+        home_title: 'أساس الدقة | استشارات ضريبية ومحاسبية في الأردن',
+        home_desc: 'امتثال ضريبي احترافي، خدمات محاسبية، واستشارات تجارية في الأردن. الدقة في التفاصيل والتميز في العمل منذ عام 2014.',
+        about_title: 'من نحن | أساس الدقة',
+        about_desc: 'تعرف على إرث أساس الدقة من النزاهة المهنية والالتزام بالتميز في خدمات الاستشارات الضريبية والمحاسبية.',
+        services_title: 'خدماتنا | حلول أعمال احترافية',
+        services_desc: 'حلول ضريبية ومحاسبية وحلول ERP شاملة مصممة للشركات الصغيرة والمتوسطة والشركات النامية في الأردن.',
+        contact_title: 'اتصل بنا | تواصل معنا',
+        contact_desc: 'اتصل بأساس الدقة للحصول على استشارات ضريبية ومحاسبية احترافية. ابدأ مشاوراتك الرسمية اليوم.',
+        wealth_title: 'إدارة الثروات | استشارات مالية استراتيجية',
+        wealth_desc: 'مخططات مخصصة للحفاظ على الثروة وهندسة مالية استراتيجية للأفراد ذوي الملاءة المالية العالية.',
+        institutional_title: 'الخدمات المؤسسية | استشارات الشركات',
+        institutional_desc: 'استشارات هيكلية معقدة وحلول مالية مؤسسية للعمليات واسعة النطاق.',
+        insights_title: 'رؤى ووجهات نظر | ذكاء مالي',
+        insights_desc: 'تعمق في الأنظمة الضريبية واتجاهات المحاسبة وذكاء الأعمال الاستراتيجي من فريقنا التنفيذي.'
       },
       hero: {
         title: {
