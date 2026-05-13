@@ -12,11 +12,12 @@ export const Logo: React.FC<LogoProps> = ({ className, showText = true }) => {
       <div className="relative w-14 h-14 flex items-center justify-center">
         {/* The user provided logo image */}
         <img 
-          src="/logo.png" 
-          alt="أساس الدقة" 
-          className="w-full h-full object-contain"
+          src="/input_file_0.png" 
+          alt="Asas Al-Deqa Logo" 
+          className="w-full h-full object-contain brightness-110"
+          referrerPolicy="no-referrer"
           onError={(e) => {
-            // Fallback to SVG if image is not found
+            // Fallback to text if image is not found
             e.currentTarget.style.display = 'none';
             const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback');
             if (fallback) (fallback as HTMLElement).style.display = 'flex';
@@ -40,13 +41,13 @@ export const Logo: React.FC<LogoProps> = ({ className, showText = true }) => {
             </defs>
             <text
               x="50%"
-              y="50%"
+              y="55%"
               dominantBaseline="middle"
               textAnchor="middle"
               className="font-serif font-bold italic"
               fill="url(#gold-gradient)"
-              fontSize="70"
-              style={{ fontFamily: 'var(--font-serif)' }}
+              fontSize="65"
+              style={{ fontFamily: 'var(--font-serif)', letterSpacing: '-0.1em' }}
             >
               AS
             </text>

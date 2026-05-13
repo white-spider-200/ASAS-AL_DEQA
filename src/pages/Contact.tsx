@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Clock, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { SEO } from '../components/common/SEO';
+import { Logo } from '../components/ui/Logo';
 
 export const Contact = () => {
   const { t } = useTranslation();
@@ -53,12 +54,7 @@ export const Contact = () => {
             className="space-y-12 md:space-y-16"
           >
             <div className="flex items-center gap-6 mb-12">
-              <img 
-                src="/input_file_0.png" 
-                alt="Asas Al-Deqa Logo" 
-                className="h-16 w-auto object-contain brightness-110"
-                referrerPolicy="no-referrer"
-              />
+              <Logo showText={false} className="h-16 w-16" />
               <div className="h-12 w-px bg-primary/20 hidden sm:block" />
               <div className="hidden sm:block">
                 <div className="text-primary text-[10px] font-bold tracking-[0.3em] uppercase">{t('about.managed_by.main')}</div>

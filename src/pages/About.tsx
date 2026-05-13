@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Shield, Building2, Cpu, Briefcase } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { SEO } from "../components/common/SEO";
+import { Logo } from "../components/ui/Logo";
 
 const experts = [
   {
@@ -136,12 +137,7 @@ export const About = () => {
             <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase block">
               {t('nav.about')}
             </span>
-            <img 
-              src="/input_file_0.png" 
-              alt="Asas Al-Deqa Heritage" 
-              className="h-24 md:h-40 w-auto object-contain mx-auto brightness-110"
-              referrerPolicy="no-referrer"
-            />
+            <Logo showText={false} className="h-24 md:h-40 w-auto brightness-110" />
           </div>
 
           {/* Year Badge */}

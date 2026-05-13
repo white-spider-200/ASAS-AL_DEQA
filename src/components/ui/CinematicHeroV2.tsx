@@ -18,6 +18,7 @@ import {
   TrendingUp 
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Logo } from "./Logo";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -252,7 +253,7 @@ export function CinematicHeroV2({
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-[#0d0d0d]/80" />
       </div>
 
-      <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 will-change-transform transform-style-3d">
+      <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 will-change-transform transform-style-3d mt-20 lg:mt-0">
         <h1 className="text-track gsap-reveal text-3d-matte text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tight mb-2 uppercase py-4 leading-[1.1] font-serif">
           {t('hero.title.main')}
         </h1>
@@ -300,12 +301,7 @@ export function CinematicHeroV2({
             {/* LEFT CONTENT: Text Content */}
             <div className="card-left-content gsap-reveal flex-1 flex flex-col items-center lg:items-start text-center lg:text-start z-20 w-full">
               <div className="mb-6 lg:mb-10 flex items-center gap-6">
-                <img 
-                  src="/input_file_0.png" 
-                  alt="Asas Al-Deqa Logo" 
-                  className="h-12 lg:h-16 w-auto object-contain brightness-110 drop-shadow-2xl"
-                  referrerPolicy="no-referrer"
-                />
+                <Logo showText={false} className="lg:scale-100 scale-90" />
                 <div className="h-12 w-px bg-primary/20 hidden sm:block" />
                 <div className="px-4 py-2 border border-primary/30 rounded-sm bg-primary/5 inline-flex items-center gap-2">
                   <Landmark size={14} className="text-primary" />

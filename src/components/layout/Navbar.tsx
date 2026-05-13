@@ -46,12 +46,7 @@ export const Navbar = () => {
       <div className="max-w-container-max mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img 
-            src="/input_file_0.png" 
-            alt="Asas Al-Deqa Logo" 
-            className="h-12 w-auto object-contain"
-            referrerPolicy="no-referrer"
-          />
+          <Logo showText={false} className="lg:scale-100 scale-90 origin-left" />
         </Link>
 
         {/* Desktop Navigation */}
